@@ -15,6 +15,10 @@ public class FibonacciTest {
 
     @Test
     public void testFibonacci() {
+        assertEquals(fibonacci.fib(-10), -1);
+        assertEquals(fibonacci.fib(0), 0);
+        assertEquals(fibonacci.fib(1), 1);
+        assertEquals(fibonacci.fib(5), 5);
         assertEquals(fibonacci.fib(10), 55);
     }
 
