@@ -13,13 +13,24 @@ public class FibonacciTest {
         fibonacci = new Fibonacci();
     }
 
-    @Test
-    public void testFibonacci() {
-        assertEquals(fibonacci.fib(-10), -1);
-        assertEquals(fibonacci.fib(0), 0);
-        assertEquals(fibonacci.fib(1), 1);
-        assertEquals(fibonacci.fib(5), 5);
-        assertEquals(fibonacci.fib(10), 55);
+    @Test(expected = IllegalArgumentException.class)
+    public void testRecursiveFibonacci() {
+        // this call will throw an IllegalArgumentException
+        fibonacci.fibRecursive(-10);
+        assertEquals(fibonacci.fibRecursive(0), 0);
+        assertEquals(fibonacci.fibRecursive(1), 1);
+        assertEquals(fibonacci.fibRecursive(5), 5);
+        assertEquals(fibonacci.fibRecursive(10), 55);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testMemoizationFibonacci() {
+        // this call will throw an IllegalArgumentException
+        fibonacci.fibMemoization(-10);
+        assertEquals(fibonacci.fibMemoization(0), 0);
+        assertEquals(fibonacci.fibMemoization(1), 1);
+        assertEquals(fibonacci.fibMemoization(5), 5);
+        assertEquals(fibonacci.fibMemoization(10), 55);
     }
 
 }
