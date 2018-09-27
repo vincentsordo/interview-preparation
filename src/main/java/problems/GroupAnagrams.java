@@ -18,6 +18,10 @@ import java.util.*;
  * Note:
  * All inputs will be in lowercase.
  * The order of your output does not matter.
+ *
+ * People Asking This Question
+ * - interviewing.io
+ *
  */
 public class GroupAnagrams {
     /**
@@ -54,5 +58,33 @@ public class GroupAnagrams {
         char [] charArray = str.toCharArray();
         Arrays.sort(charArray);
         return String.valueOf(charArray);
+    }
+
+    /**
+     * Space: O(n*k) - where k is the max length of one of the strings
+     * Time: O(n*k)
+     * @param strs
+     * @return
+     */
+    public List<List<String>> groupAnagramsUsingCharacterCount(String[] strs) {
+        if (strs.length == 0) return new ArrayList<>();
+        Map<String, List> ans = new HashMap<>();
+        int[] count = new int[26];
+        for (String s : strs) {
+            Arrays.fill(count, 0);
+            for (char c : s.toCharArray()) count[c - 'a']++;
+
+            StringBuilder sb = new StringBuilder("");
+            for (int i = 0; i < 26; i++) {
+                sb.append('#');
+                sb.append(count[i]);
+            }
+            String key = sb.toString();
+            if (!ans.containsKey(key)) {
+                ans.put(key, new ArrayList());
+            }
+            ans.get(key).add(s);
+        }
+        return new ArrayList(ans.values());
     }
 }
