@@ -1,5 +1,9 @@
 package problems;
 
+/**
+ * Solve a simpler version of the problem (in this case, reversing the characters instead of the words),
+ * and see if that gets us closer to a solution for the original problem
+ */
 public class ReverseWords {
     public void reverse(char [] message) {
         /*
