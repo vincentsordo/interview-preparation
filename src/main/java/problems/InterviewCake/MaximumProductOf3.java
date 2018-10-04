@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 /**
      Given a list of integers, find the maximum product
      you can get from three of the integers.

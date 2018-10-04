@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 /**
  * Max Profit of Stock Price

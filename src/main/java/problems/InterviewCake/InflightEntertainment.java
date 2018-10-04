@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 /**
  * You've built an inflight entertainment system with on-demand

@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 import org.junit.Before;
 import org.junit.Test;

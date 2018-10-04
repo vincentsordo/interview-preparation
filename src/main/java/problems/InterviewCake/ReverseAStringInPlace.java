@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 public class ReverseAStringInPlace {
     // use case 1 - a b c

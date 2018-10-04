@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 /**
  * Write a method getProductsOfAllIntsExceptAtIndexWithDivision() that takes

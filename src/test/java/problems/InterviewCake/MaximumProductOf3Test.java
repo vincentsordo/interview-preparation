@@ -1,9 +1,9 @@
-package problems;
+package problems.InterviewCake;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class MaximumProductOf3Test {
     private MaximumProductOf3 maximumProductOf3;

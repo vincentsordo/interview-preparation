@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 public class SortedScores {
     public int[] sort(int[] unsortedArray, int highestScore) {

@@ -1,4 +1,4 @@
-package problems;
+package problems.InterviewCake;
 
 /**
  * Solve a simpler version of the problem (in this case, reversing the characters instead of the words),
