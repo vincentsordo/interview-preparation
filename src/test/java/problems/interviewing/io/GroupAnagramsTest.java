@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GroupAnagramsTest {
     private GroupAnagrams groupAnagrams;
@@ -28,7 +29,9 @@ public class GroupAnagramsTest {
 
     @Test
     public void testGroupAnagrams() {
-        assertEquals(expectedList, groupAnagrams.groupAnagrams(inputArray));
+        assertTrue(expectedList.contains(groupAnagrams.groupAnagrams(inputArray).get(0)));
+        assertTrue(expectedList.contains(groupAnagrams.groupAnagrams(inputArray).get(1)));
+        assertTrue(expectedList.contains(groupAnagrams.groupAnagrams(inputArray).get(2)));
     }
 
     @Test
