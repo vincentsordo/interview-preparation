@@ -13,11 +13,17 @@ public class FindADuplicate {
      *  1. iterate over the array twice O(n^2) to find duplicate
      *      time: O(n^2)
      *      space: O(1)
-     *  2. Iterate over array, for each value set it to negative,
+     *  2. The approach is similar to a binary search, except we
+     *      divide the range of possible answers in half at each step,
+     *      rather than dividing the array in half.
+     *          time: O(nlogn)
+     *          space: O(1)
+     *  3. Iterate over array, for each value set it to negative,
      *      then if you find another value that is negative out of
      *      integers 1 -> n, then you have found your duplicate.
      *          time: O(n)
      *          space: O(1)
+     *          tradeoff: this manipulates the input array
      * @param inputArray
      * @return
      */
