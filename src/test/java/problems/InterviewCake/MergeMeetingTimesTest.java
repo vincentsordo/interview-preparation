@@ -8,10 +8,10 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class MergeRangesTest {
-    private MergeRanges mergeRanges;
-    private List<MergeRanges.Meeting> meetings;
-    private List<MergeRanges.Meeting> mergedMeetings;
+public class MergeMeetingTimesTest {
+    private MergeMeetingTimes mergeRanges;
+    private List<MergeMeetingTimes.Meeting> meetings;
+    private List<MergeMeetingTimes.Meeting> mergedMeetings;
 
     @Before
     public void init() {
@@ -23,7 +23,7 @@ public class MergeRangesTest {
          * between 8-9 and up to eight and then 9 up, meaning that 8-9 is open
          * in the above example
          */
-        mergeRanges = new MergeRanges();
+        mergeRanges = new MergeMeetingTimes();
         meetings = new ArrayList<>();
         meetings.add(mergeRanges.new Meeting(0,1));
         meetings.add(mergeRanges.new Meeting(3,5));
@@ -39,6 +39,9 @@ public class MergeRangesTest {
 
     @Test
     public void testMergedRanges() {
-        assertEquals(mergedMeetings, mergeRanges.mergeRanges(meetings));
+        List<MergeMeetingTimes.Meeting> actualMeetings = mergeRanges.mergeRanges(meetings);
+        assertEquals(mergedMeetings.get(0), actualMeetings.get(0));
+        assertEquals(mergedMeetings.get(1), actualMeetings.get(1));
+        assertEquals(mergedMeetings.get(2), actualMeetings.get(2));
     }
 }
