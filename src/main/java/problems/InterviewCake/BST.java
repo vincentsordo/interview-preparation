@@ -1,11 +1,12 @@
 package problems.InterviewCake;
 
 /**
- * Write a method to check that a binary tree ↴ is a valid binary search tree.
+ * Binary Search Tree
  */
 public class BST {
 
     /**
+     * Write a method to check that a binary tree is a valid binary search tree.
      * O(n) time and O(n)O(n) space.
      * @param root
      * @return
@@ -20,6 +21,28 @@ public class BST {
 
         return isValid(node.left, lowerBound, node.value) &&
                 isValid(node.right, node.value, upperBound);
+    }
+
+    /**
+     * Write a method to find the 2nd largest element in a binary search tree.
+     * @param root
+     * @return
+     */
+    public int getSecondLargestValue(BinaryTreeNode root) {
+        BinaryTreeNode secondLargestNode = null;
+
+        while(root.right != null) {
+            secondLargestNode = root;
+            root = root.right;
+        }
+
+        if (root.left != null) {
+            return root.left.value;
+        } else if (secondLargestNode != null){
+            return secondLargestNode.value;
+        } else {
+            throw new IllegalArgumentException("Invalid BST tree");
+        }
     }
 
     public static class BinaryTreeNode {
