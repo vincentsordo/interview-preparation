@@ -27,7 +27,7 @@ public class FindADuplicate {
      * @param inputArray
      * @return
      */
-    public int findDuplicate(int[] inputArray) {
+    public int findDuplicateWithModification(int[] inputArray) {
         for (int i = 0; i < inputArray.length; i++) {
             int absValue = Math.abs(inputArray[i]);
             if (inputArray[absValue] >= 0) {
@@ -39,5 +39,28 @@ public class FindADuplicate {
 
         // no duplicates found
         return -1;
+    }
+
+    /**
+     * 1. the integers are in the range 1..n
+     * 2. the array has a length of n+1
+     *
+     * According to Gauss calulcation the sum of all
+     * the natural number from 1 to n is n(n+1) / 2
+     *
+     * time: O(n) space: O(1)
+     *
+     * @param inputArray
+     * @return
+     */
+    public int findDuplicateWithoutModification(int [] inputArray) {
+        int n = inputArray.length - 1;
+        int gaussSum = (n * (n+1)) / 2;
+        int arrSum = 0;
+        for (int value : inputArray) {
+            arrSum += value;
+        }
+
+        return arrSum - gaussSum;
     }
 }

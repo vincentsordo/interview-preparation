@@ -59,4 +59,24 @@ public class Fibonacci {
 
         return result;
     }
+
+    public int fibIterative(int n) {
+        // edge cases:
+        if (n < 0) {
+            throw new IllegalArgumentException("Index was negative. No such thing as a negative index in a series.");
+        } else if (n == 0 || n == 1) {
+            return n;
+        }
+
+        int prevPrev = 0; // 0th fibonacci
+        int prev = 1;  // 1st fibonacci
+        int current = 0;
+        for (int i = 1; i < n; i++) {
+            current = prevPrev + prev;
+            prevPrev = prev;
+            prev = current;
+        }
+
+        return current;
+    }
 }
